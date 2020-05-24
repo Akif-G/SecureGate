@@ -1,0 +1,25 @@
+.Content{
+    border: none;
+    color:#737373;
+    width:100em;
+    height: 100em;
+    top:0;
+    position: fixed;
+    opacity: 0.9;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+    z-index: 10;
+}
+
+
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.9;
+	}
+}

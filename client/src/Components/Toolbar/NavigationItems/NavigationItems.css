@@ -1,0 +1,47 @@
+.NavigationItems{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%; 
+    width: 100%;  
+    flex-flow: column;
+    position: relative;
+
+}
+.PartOne{
+    align-items: center;
+}
+
+@media(min-width:100px){
+    .NavigationItems{
+flex-flow: row;
+    }
+    
+}
+
+.Svg-icon {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    left: 60%;
+  }
+  
+  .Svg-icon path,
+  .Svg-icon polygon,
+  .Svg-icon rect {
+    fill: #4691f6;
+  }
+  
+.Svg-icon circle {
+    stroke: #4691f6;
+    stroke-width: 10;
+  }
+  
+
+

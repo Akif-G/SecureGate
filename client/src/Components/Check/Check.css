@@ -1,0 +1,19 @@
+.Check{
+    position: relative;
+}
+
+.Input{
+    background-color: #ffffff;
+    border:none;
+
+}
+.Butone{
+    border:none;
+    transition: all 0.1s ease-in-out;
+    background-color: #595959;
+}
+.Butone:hover{
+    opacity: 0.8;
+    transform: scale(0.9) perspective(10px);
+
+}

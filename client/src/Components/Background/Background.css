@@ -1,0 +1,31 @@
+.Switch{
+    position: fixed;
+    top:90%;
+    left:90%;
+    background-image: url("./moon.png");
+    height: 4rem;
+    width: 4rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    background-color: #ffe07d;
+    transition: ease-in-out 0.4s;
+}
+
+.Switch:hover{
+    box-shadow: 0px 0px 20px#ffe07d;
+    height: 4.4rem;
+    width: 4.4rem;
+    transition: ease-in-out 0.4s;
+}
+
+.Active{
+    background-color:#6f6571;
+    transition: ease-in-out 0.4s;
+}
+.Active:hover{
+    box-shadow: 0px 0px 20px#6f6571;
+    height: 4.4rem;
+    width: 4.4rem;
+    transition: ease-in-out 0.4s;
+}
