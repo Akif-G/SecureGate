@@ -1,6 +1,6 @@
 .Content{
     border: none;
-    color:#737373;
+    color:"black";
     width:100em;
     height: 100em;
     top:0;
@@ -11,8 +11,14 @@
 	animation-timing-function: ease-in;
     animation-duration: 0.5s;
     z-index: 10;
+    word-break: break-word;
+    padding: 0.2rem;
+     margin: 0; 
+    overflow-wrap: break-word; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center ;   
 }
-
 
 
 @keyframes fadeInOpacity {
@@ -22,4 +28,12 @@
 	100% {
 		opacity: 0.9;
 	}
+}
+
+
+.Information{
+    position: fixed;
+    top: 50%;
+    max-width: 33rem; 
+    font-size: 1.4rem;
 }

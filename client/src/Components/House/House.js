@@ -1,4 +1,4 @@
-import React, { Component ,Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import Button from '../Button/Button'
 import './House.css'
 import Certification from "../../contracts/Certification.json";
@@ -6,7 +6,7 @@ const Web3 = require('web3');
 
 class House extends Component {
     state = {
-        buttons: ["Login!"], web3: null, accounts: null, contract: null, address: null, response:null
+        buttons: ["Login!"], web3: null, accounts: null, contract: null, address: null, response: null
     };
 
 
@@ -23,7 +23,7 @@ class House extends Component {
             const networkId = await web3.eth.net.getId();
             const instance = new web3.eth.Contract(
                 Certification.abi,
-                5777 && '0x3805eF25cFb9fcF33F7CE4F0e09D234DfCB03E64',
+                '0xFF1a4E113c90bEf4087742f6A516BC1222F7BEca',
             );
             // Set web3, accounts, and contract to the state, and then proceed with an
             // example of interacting with the contract's methods.
@@ -44,96 +44,169 @@ class House extends Component {
         e.preventDefault();
         console.log(e.target[0].value)
         console.log(key)
+        this.setState({
+            response:
+                <Button
+                    width="auto"
+                    maxWidth="60%"
+                    left="20rem"
+                    value={
+                        <div
+                            style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
+                        >
+                            <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
+                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Waiting... </p>
+                            </div>
+                        </div>
+                    }
+                    key={key}
+                    Clicked={() => { }}
+                    top={(key * 9 + 1).toString() + "rem"}
+                    BG={this.props.backgroundColor}
+                ></Button>
+        });
         try {
             const { web3, accounts, contract } = this.state;
             let response;
             switch (key) {
                 case 1:
-                    contract.methods.AddCertificate(e.target[0].value).send({from:accounts[0]});
+                    contract.methods.AddCertificate(e.target[0].value).send({ from: accounts[0] }).on('confirmation', (res) => {
+                        console.log(res)
+                        this.setState({
+                            response:
+                                <Button
+                                    width="auto"
+                                    maxWidth="60%"
+                                    left="20rem"
+                                    value={
+                                        <div
+                                            style={{ fontSize: "1.4rem", textAlign: "center", padding: 0, margin: 0 }}
+                                        >
+                                            <div style={{ display: "flex", flexDirection: "row", textAlign: "center", padding: "0.2rem", margin: 0 }}>
+                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed!</p>
+                                            </div>
+                                        </div>
+                                    }
+                                    key={key}
+                                    Clicked={() => { }}
+                                    top={(key * 9 + 1).toString() + "rem"}
+                                    BG={this.props.backgroundColor}
+                                ></Button>
+                        })
+                    }).on('error', () => {
+                        this.setState({ response: null });
+                    });
                     break;
                 case 2:
-                    contract.methods.GiveCertificate(e.target[0].value,e.target[1].value).send({from:accounts[0]})
+                    contract.methods.GiveCertificate(e.target[0].value, e.target[1].value).send({ from: accounts[0] }).on('confirmation', (res) => {
+                        console.log(res)
+                        this.setState({
+                            response:
+                                <Button
+                                    width="auto"
+                                    maxWidth="60%"
+                                    left="20rem"
+                                    value={
+                                        <div
+                                            style={{ fontSize: "1.4rem", textAlign: "center", padding: 0, margin: 0 }}
+                                        >
+                                            <div style={{ display: "flex", flexDirection: "row", textAlign: "center", padding: "0.2rem", margin: 0 }}>
+                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed! </p>
+                                            </div>
+                                        </div>
+                                    }
+                                    key={key}
+                                    Clicked={() => { }}
+                                    top={(key * 9 + 1).toString() + "rem"}
+                                    BG={this.props.backgroundColor}
+                                ></Button>
+                        })
+                    }).on('error', () => {
+                        this.setState({ response: null });
+                    });
                     break;
                 case 3:
-                    contract.methods.SeeCertificates(e.target[0].value).call({from:accounts[0]},(err, res)=>{
+                    contract.methods.SeeCertificates(e.target[0].value).call({ from: accounts[0] }, (err, res) => {
                         console.log(res)
-                        let response=[];
-                        for(var i in res){
+                        let response = [];
+                        for (var i in res) {
                             response.push([res[i]])
                         }
                         this.setState({
-                        response:
-                        <Button
-                            width="60%"
-                            left="20rem"
-                            value={
-                                <div
-                                    style={{ fontSize: "1rem", textAlign: "left",padding:0, margin:0}}
-                                >
-                                    <div style={{ display: "flex", flexDirection: "row" ,padding:"0.2rem", margin:0}}>
-                                        <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333" ,padding:0, margin:0}}>Name: </p>
-                                        <p style={{padding:0, margin:0}}>{response[0]}</p>
-                                    </div>
-                                    <div style={{ display: "flex", flexDirection: "row" ,padding:"0.2rem", margin:0}}>
-                                        <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333" ,padding:0, margin:0}}>Count: </p>
-                                        <p style={{padding:0, margin:0}}>{response[2]}</p>
-                                    </div>
-                                    <div style={{ display:"inline-block", wordBreak:"break-word",padding:"0.2rem", margin:0, overflowWrap:"break-word",flexWrap:"wrap"}}>
-                                        <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333" ,padding:0, margin:0}}>Validation Number:</p>
-                                        <p style={{display:"inline-block", wordBreak:"break-word", padding:0, margin:0,overflowWrap:"break-word", flexWrap:"wrap"}}>{response[1]}</p>
-                                    </div>
-                                </div>
-                            }
-                            key={key}
-                            Clicked={() => { }}
-                            top={(key * 9 + 1).toString() + "rem"}
-                            BG={this.props.backgroundColor}
-                            ></Button>
-                    })
-                });
+                            response:
+                                <Button
+                                    width="auto"
+                                    maxWidth="60%"
+                                    left="20rem"
+                                    value={
+                                        <div
+                                            style={{ fontSize: "1rem", textAlign: "left", padding: 0, margin: 0 }}
+                                        >
+                                            <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
+                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
+                                                <p style={{ padding: 0, margin: 0 }}>{response[0]}</p>
+                                            </div>
+                                            <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
+                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Count: </p>
+                                                <p style={{ padding: 0, margin: 0 }}>{response[2]}</p>
+                                            </div>
+                                            <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
+                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Validation Number:</p>
+                                                <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[1]}</p>
+                                            </div>
+                                        </div>
+                                    }
+                                    key={key}
+                                    Clicked={() => { }}
+                                    top={(key * 9 + 1).toString() + "rem"}
+                                    BG={this.props.backgroundColor}
+                                ></Button>
+                        })
+                    });
                     break;
                 case 4:
-                    contract.methods.SeePeople(e.target[0].value,e.target[1].value).call({from:accounts[0]},(err, res)=>{
+                    contract.methods.SeePeople(e.target[0].value, e.target[1].value).call({ from: accounts[0] }, (err, res) => {
                         console.log(res)
-                        let response=[];
-                        for(var i in res){
+                        let response = [];
+                        for (var i in res) {
                             response.push([res[i]])
                         }
                         this.setState({
-                        response:
-                        <Button
-                            width="60%"
-                            left="20rem"
-                            value={
-                                <div
-                                    style={{ fontSize: "1rem", textAlign: "left",padding:0, margin:0}}
-                                >
-                                    <div style={{ display: "flex", flexDirection: "row" ,padding:"0.2rem", margin:0}}>
-                                        <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333" ,padding:0, margin:0}}>Name: </p>
-                                        <p style={{padding:0, margin:0}}>{response[0]}</p>
-                                    </div>
-                                    <div style={{ display:"inline-block", wordBreak:"break-word",padding:"0.2rem", margin:0, overflowWrap:"break-word",flexWrap:"wrap"}}>
-                                        <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333" ,padding:0, margin:0}}>Certification Number:</p>
-                                        <p style={{display:"inline-block", wordBreak:"break-word", padding:0, margin:0,overflowWrap:"break-word", flexWrap:"wrap"}}>{response[1]}</p>
-                                    </div>
-                                </div>}
-                            key={key}
-                            Clicked={() => { }}
-                            top={(key * 9 + 1).toString() + "rem"}
-                            BG={this.props.backgroundColor}
-                            ></Button>
-                    })
+                            response:
+                                <Button
+                                    width="auto"
+                                    maxWidth="60%"
+                                    left="20rem"
+                                    value={
+                                        <div
+                                            style={{ fontSize: "1rem", textAlign: "left", padding: 0, margin: 0 }}
+                                        >
+                                            <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
+                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
+                                                <p style={{ padding: 0, margin: 0 }}>{response[0]}</p>
+                                            </div>
+                                            <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
+                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certification Number:</p>
+                                                <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[1]}</p>
+                                            </div>
+                                        </div>}
+                                    key={key}
+                                    Clicked={() => { }}
+                                    top={(key * 9 + 1).toString() + "rem"}
+                                    BG={this.props.backgroundColor}
+                                ></Button>
+                        })
 
-                });
+                    });
                     break;
 
             }
-            e.target[0].value="";
-            e.target[1].value="";
+            e.target[0].value = "";
+            e.target[1].value = "";
         }
         catch{
-            e.target[0].value="";
-            e.target[1].value="";
+            e.target[0].value = "";
+            e.target[1].value = "";
             alert('A problem occured...')
             console.log("A problem occured...")
         }
@@ -170,7 +243,7 @@ class House extends Component {
                     <form
                         style={{ width: "80%", display: "flex", flexDirection: 'column', padding: "10%" }}
                         onSubmit={(e) => this.Methods(e, 2)}>
-                        <input placeholder="Certificate Number" className="Input" />
+                        <input placeholder="Certificate Index" className="Input" />
                         <input placeholder="Person name" className="Input" />
                         <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Give</button>
                     </form>
@@ -178,15 +251,15 @@ class House extends Component {
                     <form
                         style={{ width: "80%", display: "flex", flexDirection: 'column', padding: "10%" }}
                         onSubmit={(e) => this.Methods(e, 3)}>
-                        <input placeholder="Certificate Number" className="Input" />
+                        <input placeholder="Certificate Index" className="Input" />
                         <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Look</button>
                     </form>
                 if (num === 4) inside =
                     <form
                         style={{ width: "80%", display: "flex", flexDirection: 'column', padding: "10%" }}
                         onSubmit={(e) => this.Methods(e, 4)}>
-                        <input placeholder="Certificate Number" className="Input" />
-                        <input placeholder="Person Number" className="Input" />
+                        <input placeholder="Certificate Index" className="Input" />
+                        <input placeholder="Person Index" className="Input" />
                         <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Look</button>
                     </form>
                 return <Button

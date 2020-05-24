@@ -4,6 +4,7 @@
     position: absolute;
     background-color: rgba(4,173,191,0.7);
     width: 15rem;
+    min-width: 15rem;
     height: 8rem; 
     font-size: 1.4rem;
     z-index: 100;
