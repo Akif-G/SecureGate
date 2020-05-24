@@ -59,7 +59,7 @@ constructor(string memory name) public payable{
 
 
   function AddCertificate(string memory _name) public returns(uint64){
-      require(bytes(_name).length<=32 && bytes(_name).length>0);
+      require(bytes(_name).length<=32 && bytes(_name).length>0,"should contain input");
       Master.users[msg.sender].certificates[Master.users[msg.sender].certificateNumber] = certificate(
           {
               name:_name,
@@ -74,8 +74,8 @@ constructor(string memory name) public payable{
   }
 
   function GiveCertificate(uint64 _certificate,string memory _name) public returns(uint256 Number,bool success){
-      require(bytes(_name).length<=32 && bytes(_name).length>0);
-      require(Master.users[msg.sender].certificates[_certificate].exist == true);
+      require(bytes(_name).length<=32 && bytes(_name).length>0,"should contain input");
+      require(Master.users[msg.sender].certificates[_certificate].exist == true,"No certificate");
       uint256 certificateNumber = Randomize(Master.users[msg.sender].certificates[_certificate].validationNumber);
       Master.users[msg.sender].certificates[_certificate].lastTime = block.timestamp;
       Master.users[msg.sender].certificates[_certificate].people[Master.users[msg.sender].certificates[_certificate].personNumber] = person(
@@ -94,8 +94,9 @@ constructor(string memory name) public payable{
       return(certificateNumber,true);
       }
 
-  function SeeCertificates(uint64 _certificate) public view  returns(string  memory Certificate,uint256 validationNumber,uint64 Count,uint256 firstTimestamp,uint256 lastTimestamp){
-      require(Master.users[msg.sender].certificates[_certificate].exist==true);
+  function SeeCertificates(uint64 _certificate) public view  returns(
+      string  memory Certificate,uint256 validationNumber,uint64 Count,uint256 firstTimestamp,uint256 lastTimestamp){
+      require(Master.users[msg.sender].certificates[_certificate].exist==true,"No certificate");
       return(
           Master.users[msg.sender].certificates[_certificate].name,
           Master.users[msg.sender].certificates[_certificate].validationNumber,
@@ -106,7 +107,7 @@ constructor(string memory name) public payable{
   }
 
   function SeePeople(uint64 _certificate,uint64 _person)public view  returns (string memory Person,uint256 Certificate) {
-      require(Master.users[msg.sender].certificates[_certificate].people[_person].exist==true);
+      require(Master.users[msg.sender].certificates[_certificate].people[_person].exist==true,"No Person");
       return( Master.users[msg.sender].certificates[_certificate].people[_person].name,
           Master.users[msg.sender].certificates[_certificate].people[_person].certificateNumber
           );

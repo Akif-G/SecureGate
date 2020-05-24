@@ -30,6 +30,7 @@
     ]
   },
   "devDependencies": {
-    "bignumber.js": "^9.0.0"
+    "bignumber.js": "^9.0.0",
+    "gh-pages": "^2.2.0"
   }
 }

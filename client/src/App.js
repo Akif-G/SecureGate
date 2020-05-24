@@ -14,9 +14,10 @@ class App extends Component {
       <div className="App">
       <Toolbar className="ToolBar"/>
         <Switch>
-            <Route className="Check"  path="/check" component={()=><Check backgroundColor= "rgb(219,68,55)"/>} />
+            <Route className="Check"  path="/check" exact component={()=><Check backgroundColor= "rgb(219,68,55)"/>} />
             <Route className="Home"  path="/house" exact component={()=><House  backgroundColor="rgb(242,183,5)" />} />
             <Route className="House"  path="/" exact component={()=><Home backgroundColor= "rgb(4,173,191)"/>} />
+            <Route className="House" component={()=><Home backgroundColor= "rgb(4,173,191)"/>} />
         </Switch>
         <BackGround className="BackGround" style={{width:'90%',height:window.innerHeight}}></BackGround>
       </div>
