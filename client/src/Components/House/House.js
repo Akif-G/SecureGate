@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Button from '../Button/Button'
 import './House.css'
 import Certification from "../../contracts/Certification.json";
+import swal from "sweetalert";
 const Web3 = require('web3');
 
 class House extends Component {
@@ -18,7 +19,7 @@ class House extends Component {
             await window.ethereum.enable();
             // Use web3 to get the user's accounts.
             const accounts = await web3.eth.getAccounts();
-            console.log(accounts)
+            console.log("connected to metamask: ", accounts)
             // Get the contract instance.
             const networkId = await web3.eth.net.getId();
             const instance = new web3.eth.Contract(
@@ -29,12 +30,11 @@ class House extends Component {
             // example of interacting with the contract's methods.
             this.setState({ web3, accounts, contract: instance }, this.runExample);
             // Get the contract instance.
-            console.log(instance)
-            this.setState({ buttons: ['Add Certificate', 'Give Certificate', 'See Certificates ', 'See People ',] })
+            this.setState({ buttons: ['Create Certificate', 'Give Certificate', 'See Certificates ', 'See People ',] })
         } catch (error) {
             // Catch any errors for any of the above operations.
-            alert(
-                `Failed to load web3, accounts, or contract. Check console for details.`,
+            swal(
+                'Oops',`Failed to load accounts or contract.\nCheck if Metamask connected to Ropsten Test Network...\nTry refreshing the page maybe?`,"error"
             );
             console.error(error);
         }
@@ -42,8 +42,6 @@ class House extends Component {
 
     Methods = async (e, key) => {
         e.preventDefault();
-        console.log(e.target[0].value)
-        console.log(key)
         this.setState({
             response:
                 <Button
@@ -67,11 +65,10 @@ class House extends Component {
         });
         try {
             const { web3, accounts, contract } = this.state;
-            let response;
             switch (key) {
                 case 1:
                     contract.methods.AddCertificate(e.target[0].value).send({ from: accounts[0] }).on('confirmation', (res) => {
-                        console.log(res)
+                        try{
                         this.setState({
                             response:
                                 <Button
@@ -92,14 +89,22 @@ class House extends Component {
                                     top={(key * 9 + 1).toString() + "rem"}
                                     BG={this.props.backgroundColor}
                                 ></Button>
-                        })
+                        })}
+                        catch{
+                            swal(
+                                'Something terribly went wrong about contract ',`(and we do not know why) `,"error"
+                            );
+                        }
                     }).on('error', () => {
                         this.setState({ response: null });
+                        swal(
+                            'Not confirmed!',`Your Transaction request resulted in an error...\nAre you connected to Ropsten TestNet?`,"error"
+                        );
                     });
                     break;
                 case 2:
                     contract.methods.GiveCertificate(e.target[0].value, e.target[1].value).send({ from: accounts[0] }).on('confirmation', (res) => {
-                        console.log(res)
+                        try{
                         this.setState({
                             response:
                                 <Button
@@ -120,14 +125,23 @@ class House extends Component {
                                     top={(key * 9 + 1).toString() + "rem"}
                                     BG={this.props.backgroundColor}
                                 ></Button>
-                        })
+                        })}
+                        catch{
+                            swal(
+                                'Something terribly went wrong about contract ',`(and we do not know why) `,"error"
+                            );
+                        }
                     }).on('error', () => {
-                        this.setState({ response: null });
+                        this.setState({ response: null }); 
+                        swal(
+                            'Not confirmed!',`Your Transaction request resulted in an error...\nAre you connected to Ropsten TestNet?`,"error"
+                        );
                     });
                     break;
                 case 3:
                     contract.methods.SeeCertificates(e.target[0].value).call({ from: accounts[0] }, (err, res) => {
-                        console.log(res)
+                        try{
+                        if(res){
                         let response = [];
                         for (var i in res) {
                             response.push([res[i]])
@@ -162,11 +176,46 @@ class House extends Component {
                                     BG={this.props.backgroundColor}
                                 ></Button>
                         })
+                    }
+                else{
+                    this.setState({
+                        response:
+                            <Button
+                                width="auto"
+                                maxWidth="60%"
+                                left="20rem"
+                                value={
+                                    <div
+                                        style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
+                                    >
+                                        <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
+                                            <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certificate not exist...</p>
+                                        </div>
+                                    </div>
+                                }
+                                key={key}
+                                Clicked={() => { }}
+                                top={(key * 9 + 1).toString() + "rem"}
+                                BG={this.props.backgroundColor}
+                            ></Button>
                     });
+                }
+                }
+                    catch{
+                        this.setState({ response: null }); 
+                        if(err){
+                            console.log(err);
+                        }
+                        swal(
+                            'Not confirmed!',`Your Transaction request resulted in an error...\nAre you connected to Ropsten TestNet?`,"error"
+                        );
+                    }
+                });
                     break;
                 case 4:
                     contract.methods.SeePeople(e.target[0].value, e.target[1].value).call({ from: accounts[0] }, (err, res) => {
-                        console.log(res)
+                        try{
+                        if(res){
                         let response = [];
                         for (var i in res) {
                             response.push([res[i]])
@@ -197,7 +246,44 @@ class House extends Component {
                                 ></Button>
                         })
 
+                    }
+                else{
+                    this.setState({
+                        response:
+                            <Button
+                                width="auto"
+                                maxWidth="60%"
+                                left="20rem"
+                                value={
+                                    <div
+                                        style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
+                                    >
+                                        <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
+                                            <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Person not exist...</p>
+                                        </div>
+                                        <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
+                                            <p style={{ fontSize:"1rem", color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Maybe deleted. </p>
+                                        </div>
+                                    </div>
+                                }
+                                key={key}
+                                Clicked={() => { }}
+                                top={(key * 9 + 1).toString() + "rem"}
+                                BG={this.props.backgroundColor}
+                            ></Button>
                     });
+                }
+                }
+                    catch{
+                        this.setState({ response: null }); 
+                        if(err){
+                            console.log(err);
+                        }
+                        swal(
+                            'Not confirmed!',`Your Transaction request resulted in an error...\nAre you connected to Ropsten TestNet?`,"error"
+                        );
+                    }
+                });
                     break;
 
             }
@@ -205,13 +291,16 @@ class House extends Component {
             e.target[1].value = "";
         }
         catch{
-            e.target[0].value = "";
-            e.target[1].value = "";
-            alert('A problem occured...')
+            swal(
+                'Are you sure?',`Certification index starts from 0 and goes up.\n Is \"`.concat(e.target[0].value).concat(`\" appropriate?`),"info"
+                );
+                e.target[0].value = "";
+                e.target[1].value = "";
             console.log("A problem occured...")
+            this.setState({ response: null }); 
         }
-    }
 
+    };
     render() {
         if (this.state.buttons.length === 1) {
             var buttons = this.state.buttons.map(b => {
@@ -236,7 +325,7 @@ class House extends Component {
                         style={{ width: "80%", display: "flex", flexDirection: 'column', padding: "10%" }}
                         onSubmit={(e) => this.Methods(e, 1)}>
                         <input placeholder="Name" className="Input" />
-                        <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Add</button>
+                        <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Create</button>
                     </form>
 
                 if (num === 2) inside =
