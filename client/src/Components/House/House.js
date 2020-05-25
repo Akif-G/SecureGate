@@ -6,7 +6,7 @@ const Web3 = require('web3');
 
 class House extends Component {
     state = {
-        buttons: ["Login!"], web3: null, accounts: null, contract: null, address: null, response: null
+        buttons: ["Login!"], web3: null, accounts: [], contract: null, address: null, response: null
     };
 
 
@@ -277,6 +277,7 @@ class House extends Component {
             <div className="Home">
                 {buttons}
                 {this.state.response}
+                <div style={{position:"fixed",left:"2em",top:"5em",fontSize:"1.4rem"}}>{this.state.accounts[0]}</div>
             </div>
         )
     }

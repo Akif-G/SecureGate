@@ -7,6 +7,7 @@ import "./App.css";
 import Check from "./Components/Check/Check";
 import House from "./Components/House/House";
 import Home from "./Components/Home/Home";
+import Social from "./Components/Social/Social";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route className="House"  component={()=><Home backgroundColor= "rgb(4,173,191)"/>} />
         </Switch>
         <BackGround className="BackGround" style={{width:'90%',height:window.innerHeight}}></BackGround>
+        <Social></Social>
       </div>
       </HashRouter>
     );
