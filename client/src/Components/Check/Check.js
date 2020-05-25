@@ -58,6 +58,7 @@ class Check extends Component {
             try {
                 this.state.contract.methods.CheckCertificate(e.target[0].value).call((err, res) => {
                     let response = [];
+                    console.log(res,err)
                     if (res["0"] == "0x0000000000000000000000000000000000000000") {
                         this.setState({
                             response:
@@ -123,9 +124,18 @@ class Check extends Component {
             }
             catch{
                 swal(
-                    'Something terribly went wrong about contract.. ', `(and we do not know why) `, "error"
-                );
+                    'Are you sure?',"\"".concat(e.target[0].value.concat(`\" doesn't look right.`)),"info"
+                    );
+                    e.target[0].value = "";
+                this.setState({
+                    response:null
+                });
             }
+        }
+        else{
+            this.setState({
+                response:null
+            });
         }
     };
     render() {

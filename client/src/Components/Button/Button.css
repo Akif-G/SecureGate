@@ -19,6 +19,10 @@
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     display:inline-block;
     border:black 2px;
+    animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+    animation-duration: 0.3s;
 }
 
 .CustomButtonNotClickable{
@@ -43,7 +47,7 @@
     animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
 }
 
 .CustomButton:hover{
