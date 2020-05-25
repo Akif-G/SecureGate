@@ -36,6 +36,7 @@ class Check extends Component {
         this.setState({
             response:
                 <Button
+                NotClick
                     width="auto"
                     maxWidth="60%"
                     right="20rem"
@@ -61,6 +62,7 @@ class Check extends Component {
                         this.setState({
                             response:
                                 <Button
+                                    NotClick
                                     width="auto"
                                     maxWidth="60%"
                                     right="20rem"
@@ -90,6 +92,7 @@ class Check extends Component {
                         this.setState({
                             response:
                                 <Button
+                                NotClick
                                     width="auto"
                                     maxWidth="60%"
                                     right="20rem"

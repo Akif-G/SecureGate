@@ -21,6 +21,31 @@
     border:black 2px;
 }
 
+.CustomButtonNotClickable{
+    overflow-wrap: break-word;
+    position: absolute;
+    background-color: rgba(4,173,191,0.7);
+    min-height: 8rem;
+    min-width: 15rem;
+    font-size: 1.4rem;
+    z-index: 100;
+    top:35rem;
+    color:black;
+    text-align:center;
+    padding: 0px;
+    margin: 0px;
+    text-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+    transition: ease-out 1s;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    display:inline-block;
+    border:black 2px;
+    animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+}
+
 .CustomButton:hover{
     text-shadow: 0 0 100px white;
     background-color: rgb(255, 255, 255);
@@ -29,3 +54,11 @@
     box-shadow: 0 0 20px black;
 }
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.9;
+	}
+}
