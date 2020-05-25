@@ -7,7 +7,7 @@ const Web3 = require('web3');
 
 class House extends Component {
     state = {
-        buttons: ["Login!"], web3: null, accounts: [], contract: null, address: null, response: null
+        backgroundColor: "rgb(242,183,5)",buttons: ["Login!"], web3: null, accounts: [], contract: null, address: null, response: null 
     };
 
 
@@ -54,14 +54,14 @@ class House extends Component {
                             style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
                         >
                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Waiting... </p>
+                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Waiting... </p>
                             </div>
                         </div>
                     }
                     key={key}
                     Clicked={() => { }}
                     top={(key * 9 + 1).toString() + "rem"}
-                    BG={this.props.backgroundColor}
+                    BG={this.state.backgroundColor}
                 ></Button>
         });
         try {
@@ -82,14 +82,14 @@ class House extends Component {
                                             style={{ fontSize: "1.4rem", textAlign: "center", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", textAlign: "center", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed!</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed!</p>
                                             </div>
                                         </div>
                                     }
                                     key={key}
                                     Clicked={() => { }}
                                     top={(key * 9 + 1).toString() + "rem"}
-                                    BG={this.props.backgroundColor}
+                                    BG={this.state.backgroundColor}
                                 ></Button>
                         })}
                         catch{
@@ -119,14 +119,14 @@ class House extends Component {
                                             style={{ fontSize: "1.4rem", textAlign: "center", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", textAlign: "center", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed! </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed! </p>
                                             </div>
                                         </div>
                                     }
                                     key={key}
                                     Clicked={() => { }}
                                     top={(key * 9 + 1).toString() + "rem"}
-                                    BG={this.props.backgroundColor}
+                                    BG={this.state.backgroundColor}
                                 ></Button>
                         })}
                         catch{
@@ -161,15 +161,15 @@ class House extends Component {
                                             style={{ fontSize: "1rem", textAlign: "left", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[0]}</p>
                                             </div>
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Count: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Count: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[2]}</p>
                                             </div>
                                             <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
-                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Validation Number:</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Validation Number:</p>
                                                 <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[1]}</p>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@ class House extends Component {
                                     key={key}
                                     Clicked={() => { }}
                                     top={(key * 9 + 1).toString() + "rem"}
-                                    BG={this.props.backgroundColor}
+                                    BG={this.state.backgroundColor}
                                 ></Button>
                         })
                     }
@@ -194,14 +194,14 @@ class House extends Component {
                                         style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
                                     >
                                         <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                            <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certificate not exist...</p>
+                                            <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certificate not exist...</p>
                                         </div>
                                     </div>
                                 }
                                 key={key}
                                 Clicked={() => { }}
                                 top={(key * 9 + 1).toString() + "rem"}
-                                BG={this.props.backgroundColor}
+                                BG={this.state.backgroundColor}
                             ></Button>
                     });
                 }
@@ -237,18 +237,18 @@ class House extends Component {
                                             style={{ fontSize: "1rem", textAlign: "left", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[0]}</p>
                                             </div>
                                             <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
-                                                <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certification Number:</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certification Number:</p>
                                                 <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[1]}</p>
                                             </div>
                                         </div>}
                                     key={key}
                                     Clicked={() => { }}
                                     top={(key * 9 + 1).toString() + "rem"}
-                                    BG={this.props.backgroundColor}
+                                    BG={this.state.backgroundColor}
                                 ></Button>
                         })
 
@@ -265,17 +265,17 @@ class House extends Component {
                                         style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
                                     >
                                         <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                            <p style={{ color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Person not exist...</p>
+                                            <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Person not exist...</p>
                                         </div>
                                         <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                            <p style={{ fontSize:"1rem", color: this.props.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Maybe deleted. </p>
+                                            <p style={{ fontSize:"1rem", color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Maybe deleted. </p>
                                         </div>
                                     </div>
                                 }
                                 key={key}
                                 Clicked={() => { }}
                                 top={(key * 9 + 1).toString() + "rem"}
-                                BG={this.props.backgroundColor}
+                                BG={this.state.backgroundColor}
                             ></Button>
                     });
                 }
@@ -316,7 +316,7 @@ class House extends Component {
                     key={1}
                     Clicked={this.Clicked}
                     top={(1 * 7 + 1).toString() + "rem"}
-                    BG={this.props.backgroundColor}
+                    BG={this.state.backgroundColor}
                 >
                 </Button>
             });
@@ -331,7 +331,7 @@ class House extends Component {
                         style={{ width: "80%", display: "flex", flexDirection: 'column', padding: "10%" }}
                         onSubmit={(e) => this.Methods(e, 1)}>
                         <input placeholder="Name" className="Input" />
-                        <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Create</button>
+                        <button className="Butone" type="submit" style={{ color: this.state.backgroundColor }}>Create</button>
                     </form>
 
                 if (num === 2) inside =
@@ -340,14 +340,14 @@ class House extends Component {
                         onSubmit={(e) => this.Methods(e, 2)}>
                         <input placeholder="Certificate Index" className="Input" />
                         <input placeholder="Person name" className="Input" />
-                        <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Give</button>
+                        <button className="Butone" type="submit" style={{ color: this.state.backgroundColor }}>Give</button>
                     </form>
                 if (num === 3) inside =
                     <form
                         style={{ width: "80%", display: "flex", flexDirection: 'column', padding: "10%" }}
                         onSubmit={(e) => this.Methods(e, 3)}>
                         <input placeholder="Certificate Index" className="Input" />
-                        <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Look</button>
+                        <button className="Butone" type="submit" style={{ color: this.state.backgroundColor }}>Look</button>
                     </form>
                 if (num === 4) inside =
                     <form
@@ -355,7 +355,7 @@ class House extends Component {
                         onSubmit={(e) => this.Methods(e, 4)}>
                         <input placeholder="Certificate Index" className="Input" />
                         <input placeholder="Person Index" className="Input" />
-                        <button className="Butone" type="submit" style={{ color: this.props.backgroundColor }}>Look</button>
+                        <button className="Butone" type="submit" style={{ color: this.state.backgroundColor }}>Look</button>
                     </form>
                 return <Button
                     left="2rem"
@@ -363,7 +363,7 @@ class House extends Component {
                     key={num}
                     Clicked={() => { }}
                     top={(num * 9 + 1).toString() + "rem"}
-                    BG={this.props.backgroundColor}
+                    BG={this.state.backgroundColor}
                 >{inside}</Button>
             }
             )
@@ -373,6 +373,7 @@ class House extends Component {
                 {buttons}
                 {this.state.response}
                 <div style={{position:"fixed",left:"2rem",top:"5em",padding:"0px",margin:"0px",fontSize:"1.4rem",zIndex:"10000"}}>{this.state.accounts[0]}</div>
+                <div style={{position:"fixed",left:"2rem",bottom:"1em",padding:"0px",margin:"0px",fontSize:"1.4rem",zIndex:"10000",color:"white"}}>{this.state.accounts[0]}</div>
             </div>
         )
     }

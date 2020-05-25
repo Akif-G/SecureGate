@@ -1,16 +1,46 @@
-.Github{
-position: fixed;
-width: 3em;
-height: 3em;
-right: 3em;
-bottom:3em;
-z-index: 1000;
-background: url('./github.png');
-background-size: contain;
-transition: ease-out 0.4s;
+.InteractiveButton{
+    position: fixed;
+    width: 3em;
+    height: 3em;
+    bottom:3em;
+    z-index: 1000;
+    transition: ease-out 0.4s;
 }
 
-.Github:hover{
+#Github{
+    background: url('./github.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#Github:hover{
     transition: ease-out 0.4s;
     transform:  scale(1.3) ;   
+}
+
+#ModeBlack{
+    border-radius: 50%;
+    background: url('./moon.png');
+    background-color: #6f6571;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#ModeBlack:hover{
+    background-color: #ffe07d;
+    transition: ease-out 0.4s;
+}
+
+
+#ModeWhite{
+    border-radius: 50%;
+    background: url('./moon.png');
+    background-color: #ffe07d;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#ModeWhite:hover{
+    background-color: #6f6571;
+    transition: ease-out 0.4s;
 }

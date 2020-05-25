@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import HomeContent from './HomeContent/HomeContent';
 class Home extends Component {
     state = {
-        homeContent: null
+        homeContent: null,backgroundColor: "rgb(4,173,191)"
     }
     Clicked = () => {
         if (this.state.homeContent) {
@@ -13,7 +13,7 @@ class Home extends Component {
         else {
             this.setState({
                 homeContent: <HomeContent
-                    BG={this.props.backgroundColor} className="Content"
+                    BG={this.state.backgroundColor} className="Content"
                 ></HomeContent>
             })
         };
@@ -29,7 +29,7 @@ class Home extends Component {
                     value={"SecureTificate"}
                     Clicked={this.Clicked}
                     top={(1 * 7 + 1).toString() + "rem"}
-                    BG={this.props.backgroundColor}
+                    BG={this.state.backgroundColor}
                 />
                 {this.state.homeContent}
 
