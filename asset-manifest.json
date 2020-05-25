@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/SecureTificate/static/css/main.ef193001.chunk.css",
-    "main.js": "/SecureTificate/static/js/main.3d8fbfb0.chunk.js",
-    "main.js.map": "/SecureTificate/static/js/main.3d8fbfb0.chunk.js.map",
+    "main.js": "/SecureTificate/static/js/main.8cc9da19.chunk.js",
+    "main.js.map": "/SecureTificate/static/js/main.8cc9da19.chunk.js.map",
     "runtime-main.js": "/SecureTificate/static/js/runtime-main.edf1c38e.js",
     "runtime-main.js.map": "/SecureTificate/static/js/runtime-main.edf1c38e.js.map",
-    "static/js/2.22456324.chunk.js": "/SecureTificate/static/js/2.22456324.chunk.js",
-    "static/js/2.22456324.chunk.js.map": "/SecureTificate/static/js/2.22456324.chunk.js.map",
+    "static/js/2.97168ee8.chunk.js": "/SecureTificate/static/js/2.97168ee8.chunk.js",
+    "static/js/2.97168ee8.chunk.js.map": "/SecureTificate/static/js/2.97168ee8.chunk.js.map",
     "index.html": "/SecureTificate/index.html",
-    "precache-manifest.7a3b3b7715ab362bce1df221b8170cac.js": "/SecureTificate/precache-manifest.7a3b3b7715ab362bce1df221b8170cac.js",
+    "precache-manifest.5892bdf885344a3273646d06244e37fa.js": "/SecureTificate/precache-manifest.5892bdf885344a3273646d06244e37fa.js",
     "service-worker.js": "/SecureTificate/service-worker.js",
     "static/css/main.ef193001.chunk.css.map": "/SecureTificate/static/css/main.ef193001.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.edf1c38e.js",
-    "static/js/2.22456324.chunk.js",
+    "static/js/2.97168ee8.chunk.js",
     "static/css/main.ef193001.chunk.css",
-    "static/js/main.3d8fbfb0.chunk.js"
+    "static/js/main.8cc9da19.chunk.js"
   ]
 }
