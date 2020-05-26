@@ -14,18 +14,18 @@ class App extends Component {
     mode: "white"
   }
   ChangeMode = () => {
-    if (this.state.mode == "white") { this.setState({ mode: "black" }); }
-    else if (this.state.mode == "black") { this.setState({ mode: "white" }); };
+    if (this.state.mode === "white") { this.setState({ mode: "black" }); }
+    else if (this.state.mode === "black") { this.setState({ mode: "white" }); };
   }
 
 
   render() {
     var backGround;
-    if (this.state.mode == "white") {
+    if (this.state.mode === "white") {
       backGround =
         <BackGround className="BackGround" mode={"white"} key={this.state.mode} style={{ width: '90%', height: window.innerHeight }}></BackGround>;
     }
-    if (this.state.mode == "black") {
+    if (this.state.mode === "black") {
       backGround =
         <BackGround className="BackGround" mode={"black"} key={this.state.mode} style={{ width: '90%', height: window.innerHeight }}></BackGround>;
     }

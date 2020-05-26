@@ -4,7 +4,7 @@ import './Social.css'
 const Social = (props) => {
     var mode="ModeWhite"
     var invertStyle=null;
-    if(props.mode=="black"){
+    if(props.mode==="black"){
         mode="ModeBlack"
         invertStyle="invert(1)"
     }

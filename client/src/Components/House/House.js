@@ -54,7 +54,7 @@ class House extends Component {
                             style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
                         >
                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Waiting... </p>
+                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: 0, margin: 0 }}>Waiting... </p>
                             </div>
                         </div>
                     }
@@ -82,7 +82,7 @@ class House extends Component {
                                             style={{ fontSize: "1.4rem", textAlign: "center", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", textAlign: "center", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed!</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: "0.2rem", margin: 0 }}>Confirmed!</p>
                                             </div>
                                         </div>
                                     }
@@ -119,7 +119,7 @@ class House extends Component {
                                             style={{ fontSize: "1.4rem", textAlign: "center", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", textAlign: "center", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: "0.2rem", margin: 0 }}>Confirmed! </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: "0.2rem", margin: 0 }}>Confirmed! </p>
                                             </div>
                                         </div>
                                     }
@@ -161,15 +161,15 @@ class House extends Component {
                                             style={{ fontSize: "1rem", textAlign: "left", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Name: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[0]}</p>
                                             </div>
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Count: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Count: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[2]}</p>
                                             </div>
                                             <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Validation Number:</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Validation Number:</p>
                                                 <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[1]}</p>
                                             </div>
                                         </div>
@@ -237,11 +237,11 @@ class House extends Component {
                                             style={{ fontSize: "1rem", textAlign: "left", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: 0, margin: 0 }}>Name: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[0]}</p>
                                             </div>
                                             <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certification Number:</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: 0, margin: 0 }}>Certification Number:</p>
                                                 <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[1]}</p>
                                             </div>
                                         </div>}
@@ -265,10 +265,10 @@ class House extends Component {
                                         style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
                                     >
                                         <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                            <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Person not exist...</p>
+                                            <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: 0, margin: 0 }}>Person not exist...</p>
                                         </div>
                                         <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                            <p style={{ fontSize:"1rem", color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Maybe deleted. </p>
+                                            <p style={{ fontSize:"1rem", color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: 0, margin: 0 }}>Maybe deleted. </p>
                                         </div>
                                     </div>
                                 }

@@ -3,12 +3,6 @@ import * as THREE from "three";
 
 class BackGround extends Component {
 
-	componentDidUpdate(prevProps) {
-		if (prevProps.mode != this.props.mode) {
-			this.forceUpdate();
-		}
-	}
-
 	componentDidMount() {
 		this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
 		this.camera.position.z = 100;
@@ -98,7 +92,7 @@ class BackGround extends Component {
 
 		var geometry = new THREE.BoxGeometry(5, 5, 5);
 
-		if (this.props.mode == "white") {
+		if (this.props.mode === "white") {
 			this.scene.background = new THREE.Color(0xffffff);
 			this.cub = new THREE.Mesh(geometry, material);
 			this.scene.add(this.cub);

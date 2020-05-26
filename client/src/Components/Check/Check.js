@@ -45,7 +45,7 @@ class Check extends Component {
                             style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
                         >
                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Waiting... </p>
+                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Waiting... </p>
                             </div>
                         </div>
                     }
@@ -71,10 +71,10 @@ class Check extends Component {
                                             style={{ fontSize: "1.4rem", textAlign: "left", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Probably Not exist... </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: 0, margin: 0 }}>Probably Not exist... </p>
                                             </div>
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                            <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0, fontSize: "0.7rem" }}>Is there a problem? Let us know!</p>
+                                            <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333",userSelect: "none", padding: 0, margin: 0, fontSize: "0.7rem" }}>Is there a problem? Let us know!</p>
                                             </div>
 
                                         </div>
@@ -101,15 +101,15 @@ class Check extends Component {
                                             style={{ fontSize: "1rem", textAlign: "left", padding: 0, margin: 0 }}
                                         >
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certificate: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Certificate: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[1]}</p>
                                             </div>
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Name: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Name: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[2]}</p>
                                             </div>
                                             <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 }}>Certification Address:</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0,userSelect: "none" }}>Certification Address:</p>
                                                 <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[0]}</p>
                                             </div>
                                         </div>}
@@ -123,7 +123,7 @@ class Check extends Component {
             }
             catch{
                 swal(
-                    'Are you sure?',"\"".concat(e.target[0].value.concat(`\" doesn't look right.`)),"info"
+                    'Are you sure?',"\"".concat(e.target[0].value.concat(`\" doesn't look right...`)),"info"
                     );
                     e.target[0].value = "";
                 this.setState({
