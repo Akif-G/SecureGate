@@ -11,7 +11,7 @@ class Check extends Component {
     componentDidMount = async () => {
         try {
             const web3 = await new Web3(window.ethereum);
-            await window.ethereum.enable();
+            //await window.ethereum.enable();
             // Use web3 to get the user's accounts.
             const accounts = await web3.eth.getAccounts();
 
@@ -25,14 +25,14 @@ class Check extends Component {
         }
         catch{
             swal(
-                'Oops', `Failed to load accounts or contract.\nCheck if Metamask connected to Ropsten Test Network...\nTry refreshing the page maybe?`, "error"
+                'Metamask?', `Failed to load accounts or contract.\nCheck if Metamask exist...\n We need Metamask to reach to Ethereum Blockchain.\nTry refreshing the page maybe?`, "error"
             );
             console.error("Probably no metamask!");
         }
     };
 
     Check = (e) => {
-        e.preventDefault();
+        e.preventDefault();     
         this.setState({
             response:
                 <Button
@@ -58,6 +58,7 @@ class Check extends Component {
             try {
                 this.state.contract.methods.CheckCertificate(e.target[0].value).call((err, res) => {
                     let response = [];
+                    if(res){
                     if (res["0"] == "0x0000000000000000000000000000000000000000") {
                         this.setState({
                             response:
@@ -119,11 +120,20 @@ class Check extends Component {
                                 ></Button>
                         })
                     }
+                }
+            else{
+                swal(
+                    'Ropsten?', `Failed to reach contract.\nCheck if Metamask connected to Ropsten Testnet...\nTry refreshing the page maybe?`, "error"
+                );
+                console.error("Probably no metamask!");
+                this.setState({
+                    response:null
                 });
-            }
+            }});
+        }
             catch{
                 swal(
-                    'Are you sure?',"\"".concat(e.target[0].value.concat(`\" doesn't look right...`)),"info"
+                    'Are you sure?',"\"".concat(e.target[0].value.concat(`\" doesn't look right...\nTry refreshing page maybe? `)),"info"
                     );
                     e.target[0].value = "";
                 this.setState({
