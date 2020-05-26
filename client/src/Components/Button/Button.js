@@ -4,9 +4,9 @@ import './Button.css'
 const Button = (props) => {
     if (props.NotClick) {
         return (
-            <div
-                className="CustomButtonNotClickable" type="button" style={{ left: props.left, right: props.right, top: props.top, backgroundColor: props.BG, width: props.width, maxWidth: props.maxWidth }}
-            >{props.value} {props.children}</div>
+            <button
+                className="CustomButtonNotClickable" type="button" style={{ left: props.left, right: props.right, top: props.top, backgroundColor: props.BG, width: props.width, maxWidth: props.maxWidth ,userSelect: "text"}}
+            >{props.value} {props.children}</button>
         )
     }
     else {

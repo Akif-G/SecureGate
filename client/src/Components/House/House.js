@@ -46,7 +46,7 @@ class House extends Component {
             response:
                 <Button
                     width="auto"
-                                NotClick
+                    NotClick
                     maxWidth="60%"
                     left="20rem"
                     value={
@@ -372,8 +372,8 @@ class House extends Component {
             <div className="Home">
                 {buttons}
                 {this.state.response}
-                <div style={{position:"fixed",left:"2rem",top:"5em",padding:"0px",margin:"0px",fontSize:"1.4rem",zIndex:"10000"}}>{this.state.accounts[0]}</div>
-                <div style={{position:"fixed",left:"2rem",bottom:"1em",padding:"0px",margin:"0px",fontSize:"1.4rem",zIndex:"10000",color:"white"}}>{this.state.accounts[0]}</div>
+                <div style={{position:"fixed",left:"2rem",top:"5em",padding:"0px",margin:"0px",fontSize:"1.4rem",zIndex:"10000", userSelect:"none"}}>{this.state.accounts[0]}</div>
+                <div style={{position:"fixed",left:"2rem",bottom:"1em",padding:"0px",margin:"0px",fontSize:"1.4rem",zIndex:"10000",color:"white" , userSelect:"none"}}>{this.state.accounts[0]}</div>
             </div>
         )
     }

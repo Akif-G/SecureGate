@@ -1,5 +1,9 @@
 
 .CustomButton{
+    display: "flex"; 
+    flex-direction: "row"; 
+    align-items: 'center';
+    justify-content: 'space-around';
     overflow-wrap: break-word;
     position: absolute;
     background-color: rgba(4,173,191,0.7);
@@ -26,6 +30,10 @@
 }
 
 .CustomButtonNotClickable{
+    display: "flex"; 
+    flex-direction: "row"; 
+    align-items: 'center';
+    justify-content: 'space-around';
     overflow-wrap: break-word;
     position: absolute;
     background-color: rgba(4,173,191,0.7);

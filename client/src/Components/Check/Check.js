@@ -105,11 +105,11 @@ class Check extends Component {
                                                 <p style={{ padding: 0, margin: 0 }}>{response[1]}</p>
                                             </div>
                                             <div style={{ display: "flex", flexDirection: "row", padding: "0.2rem", margin: 0 }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Name: </p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0 ,userSelect: "none"}}>Receiver: </p>
                                                 <p style={{ padding: 0, margin: 0 }}>{response[2]}</p>
                                             </div>
                                             <div style={{ display: "inline-block", wordBreak: "break-word", padding: "0.2rem", margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>
-                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0,userSelect: "none" }}>Certification Address:</p>
+                                                <p style={{ color: this.state.backgroundColor, backgroundColor: "#333333", padding: 0, margin: 0,userSelect: "none" }}>Certification House:</p>
                                                 <p style={{ display: "inline-block", wordBreak: "break-word", padding: 0, margin: 0, overflowWrap: "break-word", flexWrap: "wrap" }}>{response[0]}</p>
                                             </div>
                                         </div>}
