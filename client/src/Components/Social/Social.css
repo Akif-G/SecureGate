@@ -2,7 +2,7 @@
     position: fixed;
     width: 3em;
     height: 3em;
-    bottom:3em;
+    bottom:4em;
     z-index: 1000;
     transition: ease-out 0.4s;
 }
