@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/SecureTificate/static/css/main.bfe84884.chunk.css",
-    "main.js": "/SecureTificate/static/js/main.c2b398bf.chunk.js",
-    "main.js.map": "/SecureTificate/static/js/main.c2b398bf.chunk.js.map",
-    "runtime-main.js": "/SecureTificate/static/js/runtime-main.edf1c38e.js",
-    "runtime-main.js.map": "/SecureTificate/static/js/runtime-main.edf1c38e.js.map",
-    "static/js/2.e55fecc9.chunk.js": "/SecureTificate/static/js/2.e55fecc9.chunk.js",
-    "static/js/2.e55fecc9.chunk.js.map": "/SecureTificate/static/js/2.e55fecc9.chunk.js.map",
-    "index.html": "/SecureTificate/index.html",
-    "precache-manifest.70cfd853a172b6931f2a256873ede105.js": "/SecureTificate/precache-manifest.70cfd853a172b6931f2a256873ede105.js",
-    "service-worker.js": "/SecureTificate/service-worker.js",
-    "static/css/main.bfe84884.chunk.css.map": "/SecureTificate/static/css/main.bfe84884.chunk.css.map",
-    "static/media/Social.css": "/SecureTificate/static/media/moon.307871b8.png",
-    "static/media/Home.css": "/SecureTificate/static/media/logo.4225def4.png"
+    "main.css": "/SecureGate/static/css/main.7dc245e7.chunk.css",
+    "main.js": "/SecureGate/static/js/main.57fc81a7.chunk.js",
+    "main.js.map": "/SecureGate/static/js/main.57fc81a7.chunk.js.map",
+    "runtime-main.js": "/SecureGate/static/js/runtime-main.a288648d.js",
+    "runtime-main.js.map": "/SecureGate/static/js/runtime-main.a288648d.js.map",
+    "static/js/2.e55fecc9.chunk.js": "/SecureGate/static/js/2.e55fecc9.chunk.js",
+    "static/js/2.e55fecc9.chunk.js.map": "/SecureGate/static/js/2.e55fecc9.chunk.js.map",
+    "index.html": "/SecureGate/index.html",
+    "precache-manifest.1ee98a46d352883146a914faec2a53d9.js": "/SecureGate/precache-manifest.1ee98a46d352883146a914faec2a53d9.js",
+    "service-worker.js": "/SecureGate/service-worker.js",
+    "static/css/main.7dc245e7.chunk.css.map": "/SecureGate/static/css/main.7dc245e7.chunk.css.map",
+    "static/media/Social.css": "/SecureGate/static/media/moon.307871b8.png",
+    "static/media/Home.css": "/SecureGate/static/media/logo.4225def4.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.edf1c38e.js",
+    "static/js/runtime-main.a288648d.js",
     "static/js/2.e55fecc9.chunk.js",
-    "static/css/main.bfe84884.chunk.css",
-    "static/js/main.c2b398bf.chunk.js"
+    "static/css/main.7dc245e7.chunk.css",
+    "static/js/main.57fc81a7.chunk.js"
   ]
 }
