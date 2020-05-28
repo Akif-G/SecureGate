@@ -19,7 +19,7 @@ class Check extends Component {
             const networkId = await web3.eth.net.getId();
             const instance = await new web3.eth.Contract(
                 Certification.abi,
-                '0xFF1a4E113c90bEf4087742f6A516BC1222F7BEca',
+                '0x054292065bbec2e6ed374f85e8a938f05f5f2f48',
             )
             this.setState({ web3, contract: instance, accounts })
         }

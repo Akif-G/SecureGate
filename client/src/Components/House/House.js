@@ -24,7 +24,7 @@ class House extends Component {
             const networkId = await web3.eth.net.getId();
             const instance = new web3.eth.Contract(
                 Certification.abi,
-                '0xFF1a4E113c90bEf4087742f6A516BC1222F7BEca',
+                '0x054292065bbec2e6ed374f85e8a938f05f5f2f48',
             );
             // Set web3, accounts, and contract to the state, and then proceed with an
             // example of interacting with the contract's methods.
@@ -88,7 +88,7 @@ class House extends Component {
                                     }
                                     key={key}
                                     Clicked={() => { }}
-                                    top={(key * 9 + 1).toString() + "rem"}
+                                    top={(1 * 9 + 1).toString() + "rem"}
                                     BG={this.state.backgroundColor}
                                 ></Button>
                         })}
@@ -125,7 +125,7 @@ class House extends Component {
                                     }
                                     key={key}
                                     Clicked={() => { }}
-                                    top={(key * 9 + 1).toString() + "rem"}
+                                    top={(2 * 9 + 1).toString() + "rem"}
                                     BG={this.state.backgroundColor}
                                 ></Button>
                         })}
@@ -298,7 +298,7 @@ class House extends Component {
         }
         catch{
             swal(
-                'Are you sure?',`Certification index starts from 0 and goes up.\n Is \"`.concat(e.target[0].value).concat(`\" appropriate?`),"info"
+                'Are you sure?',`Index starts from 0 and goes up.\n Is \"`.concat(e.target[0].value).concat(`\" appropriate?`),"info"
                 );
                 e.target[0].value = "";
                 e.target[1].value = "";

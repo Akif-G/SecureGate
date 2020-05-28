@@ -29,7 +29,7 @@ class Home extends Component {
                     value={
                     <div style={{ display: "flex", flexDirection: "row", padding: "1rem", margin: 0,alignItems: 'center',justifyContent: 'space-around' }}>
                         <div className="Logo"></div>
-                        <div>SecureTificate</div>
+                        <div>SecureGate</div>
                     </div>
                     }
                     Clicked={this.Clicked}
