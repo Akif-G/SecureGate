@@ -1,4 +1,5 @@
-# SecureGate![](https://lh3.googleusercontent.com/8UN_Ns3jgHBgGOraYVeCOqS-aHkffBRU_VrOWg8PMDTJpB5mnnj3GkctmoOYZdYAYkHKNrFNvSqifNJYP9wWzPfguQAZX6NtbPaezycWk2-U1OnDqt7B_dBLUkwIxH-9shTvdRw_ =100x)
+<h1 align="center"><a href="https://ibb.co/rFgpPVz"><img src="https://i.ibb.co/KbYsZJf/logo192.png" alt="logo192" border="0" width="100px" ></a> SecureGate!</h1>
+
 ## Table of Contents
 ### What is SecureGate?  
 ##### Why do we need SecureGate?  
@@ -126,7 +127,9 @@ Some of them are hard to read. However, for those who know the read, it is clari
 
   
 
-Mythx,
+##### Mythx
+```
+
 
 [
 
@@ -179,13 +182,14 @@ Mythx,
   
 
 ]
+```
 
   
 
-SmartScan
+##### SmartScan
 
   
-
+```
 Compiler version not fixed
 
 Lines: 1-1
@@ -225,19 +229,21 @@ Lines: 126-127
 Severity: 1
 
 Pattern id: 83hf3l
+```
 
   
 
-Security Scan
-
+##### Security Scan
+```
 Contracts that may receive ether must also allow users to extract the deposited ether from the contract.
 
 The contract versions must be fixed and specified.
+```
 
-  
 
-Oyente
+##### Oyente
 
+```
 There is no error with conditions below.
 
 Z3 timeout 100 millisecond
@@ -249,18 +255,18 @@ Gas limit 670000
 Depth Limit 30
 
 Loop Limit 5
-
+```
   
   
-  
 
-3.4 Future Improvements & notes
+### Future Improvements & notes
 
--   Upgradable contacts are important which will be issued as 2 seperate smart contracts for state and functionality...
+
+>   Upgradable contacts are important which will be issued as 2 seperate smart contracts for state and functionality...
+   
+>   Deleting a person is a must, we are not going to add a deleting a certificate option though for security.
     
--   Deleting a person is a must, we are not going to add a deleting a certificate option though for security.
-    
--   There are some problems for the ease of use of the interface. Such as adding multiple people to certificates.
+>   There are some problems for the ease of use of the interface. Such as adding multiple people to certificates.
     
 
   
