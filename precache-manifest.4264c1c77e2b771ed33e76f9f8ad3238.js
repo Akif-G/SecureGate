@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "daf1a1b68078e02c8adadb93f8710999",
+    "revision": "c32a56ae44b4382fb130dbe8d9b749ef",
     "url": "/SecureGate/index.html"
   },
   {
