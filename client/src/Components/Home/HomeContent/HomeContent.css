@@ -1,6 +1,6 @@
 .Content{
     border: none;
-    color:"black";
+    color:black;
     width:100em;
     height: 100em;
     top:0;
@@ -18,6 +18,7 @@
     display: flex; 
     justify-content: center; 
     align-items: center ;   
+    backdrop-filter:blur(4px);
 }
 
 

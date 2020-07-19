@@ -33,10 +33,10 @@ class App extends Component {
       <div className="App">
         <Toolbar className="ToolBar" />
         <Switch>
-          <Route className="Check" path="/check" exact component={ Check} />
-          <Route className="Home" path="/house" exact component={House} />
-          <Route className="House" path="/" exact component={Home} />
-          <Route className="House" component={Home} />
+          <Route path="/check" exact component={Check} />
+          <Route path="/house" exact component={House} />
+          <Route path="/" exact component={() => (<Home mode={this.state.mode} />)} />
+          <Route component={() => (<Home mode={this.state.mode} />)} />
         </Switch>
         {backGround}
         <Social ChangeMode={this.ChangeMode} mode={this.state.mode}></Social>

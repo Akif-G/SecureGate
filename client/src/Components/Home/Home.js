@@ -4,7 +4,10 @@ import Button from '../Button/Button';
 import HomeContent from './HomeContent/HomeContent';
 class Home extends Component {
     state = {
-        homeContent: null, backgroundColor: "rgb(4,173,191)"
+        homeContent: < HomeContent
+            mode={this.props.mode}
+            className="Content">
+        </HomeContent>, backgroundColor: "rgb(4,173,191)"
     }
     Clicked = () => {
         if (this.state.homeContent) {
@@ -13,7 +16,8 @@ class Home extends Component {
         else {
             this.setState({
                 homeContent: <HomeContent
-                    BG={this.state.backgroundColor} className="Content"
+                    mode={this.props.mode}
+                    className="Content"
                 ></HomeContent>
             })
         };
@@ -27,10 +31,10 @@ class Home extends Component {
             >
                 <Button
                     value={
-                    <div style={{ display: "flex", flexDirection: "row", padding: "1rem", margin: 0,alignItems: 'center',justifyContent: 'space-around' }}>
-                        <div className="Logo"></div>
-                        <div>SecureGate</div>
-                    </div>
+                        <div style={{ display: "flex", flexDirection: "row", padding: "1rem", margin: 0, alignItems: 'center', justifyContent: 'space-around' }}>
+                            <div className="Logo"></div>
+                            <div>SecureGate</div>
+                        </div>
                     }
                     Clicked={this.Clicked}
                     top={(1 * 7 + 1).toString() + "rem"}
