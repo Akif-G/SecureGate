@@ -18,7 +18,7 @@
     display: flex; 
     justify-content: center; 
     align-items: center ;   
-    backdrop-filter:blur(4px);
+    backdrop-filter:blur(6px);
 }
 
 
@@ -37,4 +37,8 @@
     top: 50%;
     max-width: 33rem; 
     font-size: 1.4rem;
+}
+
+a{
+    color:#04ADBF;
 }
