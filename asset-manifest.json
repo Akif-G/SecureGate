@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/SecureGate/static/css/main.7dc245e7.chunk.css",
-    "main.js": "/SecureGate/static/js/main.57fc81a7.chunk.js",
-    "main.js.map": "/SecureGate/static/js/main.57fc81a7.chunk.js.map",
+    "main.css": "/SecureGate/static/css/main.7bc32cf8.chunk.css",
+    "main.js": "/SecureGate/static/js/main.ae252427.chunk.js",
+    "main.js.map": "/SecureGate/static/js/main.ae252427.chunk.js.map",
     "runtime-main.js": "/SecureGate/static/js/runtime-main.a288648d.js",
     "runtime-main.js.map": "/SecureGate/static/js/runtime-main.a288648d.js.map",
     "static/js/2.e55fecc9.chunk.js": "/SecureGate/static/js/2.e55fecc9.chunk.js",
     "static/js/2.e55fecc9.chunk.js.map": "/SecureGate/static/js/2.e55fecc9.chunk.js.map",
     "index.html": "/SecureGate/index.html",
-    "precache-manifest.4264c1c77e2b771ed33e76f9f8ad3238.js": "/SecureGate/precache-manifest.4264c1c77e2b771ed33e76f9f8ad3238.js",
+    "precache-manifest.a346b29567c97799dea914162dd073ff.js": "/SecureGate/precache-manifest.a346b29567c97799dea914162dd073ff.js",
     "service-worker.js": "/SecureGate/service-worker.js",
-    "static/css/main.7dc245e7.chunk.css.map": "/SecureGate/static/css/main.7dc245e7.chunk.css.map",
+    "static/css/main.7bc32cf8.chunk.css.map": "/SecureGate/static/css/main.7bc32cf8.chunk.css.map",
     "static/media/Social.css": "/SecureGate/static/media/moon.307871b8.png",
     "static/media/Home.css": "/SecureGate/static/media/logo.4225def4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a288648d.js",
     "static/js/2.e55fecc9.chunk.js",
-    "static/css/main.7dc245e7.chunk.css",
-    "static/js/main.57fc81a7.chunk.js"
+    "static/css/main.7bc32cf8.chunk.css",
+    "static/js/main.ae252427.chunk.js"
   ]
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SecureGate/precache-manifest.4264c1c77e2b771ed33e76f9f8ad3238.js"
+  "/SecureGate/precache-manifest.a346b29567c97799dea914162dd073ff.js"
 );
 
 self.addEventListener('message', (event) => {

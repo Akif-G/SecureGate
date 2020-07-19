@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c32a56ae44b4382fb130dbe8d9b749ef",
+    "revision": "042e609ae2f341e46daad7e0a0f9e266",
     "url": "/SecureGate/index.html"
   },
   {
-    "revision": "6d78a62c19934801f225",
-    "url": "/SecureGate/static/css/main.7dc245e7.chunk.css"
+    "revision": "0e80f07ae7e9fa9c98cc",
+    "url": "/SecureGate/static/css/main.7bc32cf8.chunk.css"
   },
   {
     "revision": "9f03c922de12a7b25b80",
     "url": "/SecureGate/static/js/2.e55fecc9.chunk.js"
   },
   {
-    "revision": "6d78a62c19934801f225",
-    "url": "/SecureGate/static/js/main.57fc81a7.chunk.js"
+    "revision": "0e80f07ae7e9fa9c98cc",
+    "url": "/SecureGate/static/js/main.ae252427.chunk.js"
   },
   {
     "revision": "31ef673beade176946b9",
